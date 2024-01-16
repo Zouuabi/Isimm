@@ -13,20 +13,20 @@ This project is a backend application that provides users with the ability to re
 
 ### Usage
 1-Select a teacher by ID
-```curl -X GET http://localhost:8000/api/v1/teacher/[id]
+```curl -X GET http://localhost:8000/api/v1/teacher/[id]```
 
 2-Retrieve the classes taught by a teacher
-```curl -X GET http://localhost:8000/api/v1/teacher/[id]/classes
+```curl -X GET http://localhost:8000/api/v1/teacher/[id]/classes```
 
 3-Retrieve class's students 
-```curl -X GET http://localhost:8000/api/v1/teacher/[id]/classes/[classeId]
+```curl -X GET http://localhost:8000/api/v1/teacher/[id]/classes/[classeId]```
 
 3-1-Select a student by ID
-```curl -X GET http://localhost:8000/api/v1/student/[id]
+```curl -X GET http://localhost:8000/api/v1/student/[id]```
 
 4-Retrieve the user’s current studying courses
-```curl -X GET http://localhost:8000/api/v1/student/[id]/courses
-```
+```curl -X GET http://localhost:8000/api/v1/student/[id]/courses```
+
 
 ### Installing
 
