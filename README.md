@@ -49,8 +49,7 @@ To configure the project, you need to do the following steps:
 - Clone the repo using the following command:
 
 ```
-git clone https://github.com/your_username_/Project-Name.git
-```
+git clone https://github.com/Zouuabi/Isimm
 
 - Create a .env file in the root directory of the project, and add the following variables:
 
@@ -66,7 +65,7 @@ PORT=8000
 - Start the dart_frog server using the following command:
 
 ```
-dart run bin/main.dart
+dart_frog dev --ports 4001
 ```
 
 ## Usage
@@ -279,11 +278,4 @@ dart pub global activate test
 
 You can write your test cases in the /test directory, using the test and expect functions. You can run your tests using the following
 
-Source: Conversation with Bing, 1/16/2024
-(1) Poison dart frog - Wikipedia. https://en.wikipedia.org/wiki/Poison_dart_frog.
-(2) GitHub - VeryGoodOpenSource/dart_frog: A fast, minimalistic backend .... https://github.com/VeryGoodOpenSource/dart_frog.
-(3) Poison Dart Frogs | National Geographic. https://www.nationalgeographic.com/animals/amphibians/facts/poison-dart-frogs-1.
-(4) MySQL. https://www.mysql.com/.
-(5) MySQL :: Download MySQL Community Server. https://dev.mysql.com/downloads/mysql/.
-(6) MySQL :: Download MySQL Installer. https://dev.mysql.com/downloads/installer/.
-(7) undefined. https://dartfrog.vgv.dev.
+
