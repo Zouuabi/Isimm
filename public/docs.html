@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISIMM API Documentation</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+    <style>
+        body {
+            font-family: 'Fira Code', monospace;
+            background-color: #24292e;
+            color: #f8f8f2;
+            margin: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #c678dd;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        code {
+            background-color: #343d46;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background-color: #343d46;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        a {
+            color: #61afef;
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        section {
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #2c3136;
+        }
+
+        .sidebar {
+            float: left;
+            width: 25%;
+            margin-right: 20px;
+            padding: 15px;
+        }
+
+        .content {
+            width: 75%;
+        }
+
+        .header-links {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .header-links a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>ISIMM API Documentation</h1>
+
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>ISIMM is a backend application that provides a RESTful API for a university mobile app...</p>
+    </section>
+
+    <section id="prerequisites">
+        <h2>Prerequisites</h2>
+        <p>To run this project, you need to have the following software and hardware installed on your machine:</p>
+        <ul>
+            <li>Dart SDK: The software development kit for the Dart programming language. You can download it from <a
+                    href="^1^" target="_blank">here</a>.</li>
+            <li>dart_frog: The backend framework for Dart. Install it using the following command:
+                <pre><code>dart pub global activate dart_frog</code></pre>
+            </li>
+            <li>MySQL: The relational database management system. You can download it from <a href="^2^"
+                    target="_blank">here</a>.</li>
+            <li>MySQL Workbench: The graphical user interface tool for MySQL. You can download it from <a href="^3^"
+                    target="_blank">here</a>.</li>
+            <li>Postman: The API development platform. You can download it from <a href="^4^" target="_blank">here</a>.
+            </li>
+        </ul>
+        <p>To configure the project, follow these steps:</p>
+        <ul>
+            <li>Clone the repo using the following command:
+                <pre><code>git clone https://github.com/Zouuabi/Isimm</code></pre>
+            </li>
+            <li>Create a .env file in the root directory and add the following variables:
+                <pre><code>DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=isimm
+PORT=8000</code></pre>
+            </li>
+            <li>Create a database named isimm in MySQL Workbench and run the SQL script in the /db directory to create
+                tables and insert sample data.</li>
+            <li>Start the dart_frog server using the following command:
+                <pre><code>dart_frog dev --ports 4001</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <section id="usage">
+        <h2>Usage</h2>
+        <p>To use the API, send HTTP requests to the following endpoints using Postman or any other tool. The API
+            supports GET, POST, PUT, and DELETE methods and returns JSON responses.</p>
+        <h3>Examples:</h3>
+        <ul>
+            <li>Register a user
+                <pre><code>POST http://localhost:8000/api/v1/register</code></pre>
+                <p>Request body:
+                <pre><code>{
+  "username": "alice",
+  "password": "123456",
+  "role": "student"
+}</code></pre>
+                </p>
+                <p>Response:
+                <pre><code>{
+  "message": "User registered successfully",
+  "user": {
+    "id": 1,
+    "username": "alice",
+    "role": "student"
+  }
+}</code></pre>
+                </p>
+            </li>
+            <!-- Include other examples -->
+        </ul>
+    </section>
+
+    <section id="testing">
+        <h2>Testing</h2>
+        <p>To test the project, you can use the following tools and methods:</p>
+        <ul>
+            <li>dart test: The built-in testing framework for Dart. Install it using the following command:
+                <pre><code>dart pub global activate test</code></pre>
+            </li>
+            <li>Write your test cases in the /test directory using the test and expect functions.</li>
+            <li>Run your tests using the following command:
+                <pre><code>dart test</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Include other sections -->
+
+</body>
+
+</html>

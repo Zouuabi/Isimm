@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color:  #008080;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #3c856f; /* Purple */
+            color: #fff;
+        }
+
+      
+
+        td.break {
+            background-color: #ffb3b3;
+            color: #333;
+        }
+
+        td[class*="Class"] {
+            background-color: #b3d9ff;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Schedule Page</h1>
+    </header>
+
+    <main>
+        <table id="schedule-table">
+            <!-- Table content will be loaded dynamically using JavaScript -->
+        </table>
+    </main>
+
+    <script>
+        // Function to fetch and display the schedule
+        function loadSchedule() {
+            // Dummy data for the schedule
+            const dummySchedule = {
+                days: [
+                { dayName: 'Monday', schedule: ['Class', 'Class', 'Break', 'Class'] },
+                { dayName: 'Tuesday', schedule: ['Class', 'Break', 'Class', 'Class'] },
+                { dayName: 'Wendsday', schedule: ['Class', 'Class', 'Break', 'Class'] },
+                { dayName: 'Fhursday', schedule: ['Class', 'Break', 'Class', 'Class'] },
+                { dayName: 'Friday', schedule: ['Class', 'Class', 'Break', 'Class'] },
+                { dayName: 'Saturday', schedule: ['Class', 'Break', 'Class', 'Class'] },
+                    // ... Repeat for other days
+                ],
+                timeSlots: ['8:30 - 10:00', '10:15 - 11:45', '14:00 - 15:30', '15:45 - 16:15']
+            };
+
+            // Update the table with the received data
+            const table = document.getElementById('schedule-table');
+            table.innerHTML = ''; // Clear existing content
+
+            // Create table header with time slots
+            const headerRow = table.insertRow();
+            headerRow.appendChild(document.createElement('th')); // Empty cell for day labels
+            dummySchedule.timeSlots.forEach(timeSlot => {
+                const th = document.createElement('th');
+                th.textContent = timeSlot;
+                headerRow.appendChild(th);
+            });
+
+            // Create table rows for each day
+            dummySchedule.days.forEach(day => {
+                const row = table.insertRow();
+                const dayCell = row.insertCell();
+                dayCell.textContent = day.dayName;
+
+                day.schedule.forEach(slot => {
+                    const cell = row.insertCell();
+                    cell.textContent = slot;
+                });
+            });
+        }
+
+        // Initial load on page load
+        loadSchedule();
+    </script>
+</body>
+</html>

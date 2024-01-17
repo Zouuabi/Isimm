@@ -37,6 +37,8 @@ class Student extends Equatable {
     };
   }
 
+  ///
+
   /// Identidy number
   final String studentId;
 

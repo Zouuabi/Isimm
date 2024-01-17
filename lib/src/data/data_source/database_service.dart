@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:mysql_client/mysql_client.dart';
 
 /// Connects to the database
@@ -17,16 +19,17 @@ class DatabaseService {
 
   Future<void> _connect() async {
     try {
+      print(Platform.environment);
       _connection = await MySQLConnection.createConnection(
-        host: '127.0.0.1',
+        host: Platform.environment['DATABASE_HOST'] ?? '',
         port: 3306,
-        userName: 'root',
-        password: 'Doudy2k23!',
-        databaseName: 'mydb',
+        userName: Platform.environment['DATABASE_USERNAME'] ?? '',
+        password: Platform.environment['DATABASE_PASSWORD'] ?? '',
+        databaseName: 'isimm',
       );
       await _connection?.connect();
     } catch (e) {
-      throw Exception('Could not create connection with database');
+      throw Exception(e.toString());
     }
   }
 
@@ -40,7 +43,7 @@ class DatabaseService {
       await _connect();
     }
     if (_connection?.connected == false) {
-      throw Exception('Could not connect to the database');
+      throw Exception('unkown error: connection');
     }
     return _connection!.execute(query, params, iterable);
   }

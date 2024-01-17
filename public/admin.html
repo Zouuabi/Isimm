@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color:  #008080;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #eee;
+            padding: 1em;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>User Management Admin</h1>
+    </header>
+   
+
+ <nav>
+    <a href="admin.html">Home</a>
+    <a href="users.html">Users</a>
+    <button onclick="loadGroups()">Groups</button>
+    <button onclick="loadPermissions()">Permissions</button>
+ </nav>
+
+    <main>
+        <table id="data-table">
+            <!-- Table content will be loaded dynamically using JavaScript -->
+        </table>
+    </main>
+
+    <script>
+
+    </script>
+</body>
+</html>
+
+
