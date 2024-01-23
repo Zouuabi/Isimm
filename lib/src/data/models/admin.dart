@@ -1,11 +1,9 @@
 import 'package:isimm/src/data/models/user.dart';
 
 ///
-
-class Student extends User {
+class Admin extends User {
   ///
-  const Student({
-    required this.sectionId,
+  const Admin({
     required super.userId,
     required super.username,
     required super.email,
@@ -13,37 +11,30 @@ class Student extends User {
   });
 
   /// creates a new student with the given json data
-  factory Student.fromJson(Map<String, dynamic> json) {
-    return Student(
+  factory Admin.fromJson(Map<String, dynamic> json) {
+    return Admin(
       userId: json['userId'] as int? ?? -1,
       username: json['username'] as String? ?? 'null',
       email: json['email'] as String? ?? 'null',
       password: json['password'] as String? ?? 'null',
-      sectionId: json['sectionId'] as int? ?? 0,
     );
   }
 
   /// create a json object from the student object
   Map<String, dynamic> toJson() {
     return {
-      'sutdentId': userId,
+      'teacherId': userId,
       'username': username,
       'email': email,
       'password': password,
-      'sectionId': sectionId,
     };
   }
 
-  ///
-
-  ///
-  final int sectionId;
-
   @override
   List<Object?> get props => [
-        sectionId,
         userId,
         username,
+        email,
         password,
       ];
 }

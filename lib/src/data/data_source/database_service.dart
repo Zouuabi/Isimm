@@ -19,12 +19,11 @@ class DatabaseService {
 
   Future<void> _connect() async {
     try {
-      print(Platform.environment);
       _connection = await MySQLConnection.createConnection(
-        host: Platform.environment['DATABASE_HOST'] ?? '',
+        host: '127.0.0.1',
         port: 3306,
-        userName: Platform.environment['DATABASE_USERNAME'] ?? '',
-        password: Platform.environment['DATABASE_PASSWORD'] ?? '',
+        userName: 'root',
+        password: 'Doudy2k23!',
         databaseName: 'isimm',
       );
       await _connection?.connect();

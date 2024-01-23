@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:isimm/src/data/data.dart';
+import 'package:isimm/src/data/models/user.dart';
+import 'package:isimm/src/data/repositories/user/user_repository.dart';
 
 ///
 class StudentRepositoryImpl implements StudentRepository {
@@ -9,6 +11,64 @@ class StudentRepositoryImpl implements StudentRepository {
 
   ///
   final DatabaseService db;
+//
+
+//   @override
+//   Future<void> createUser(Student user) async {
+//     const sql = '''
+// -- Start a transaction
+// START TRANSACTION;
+
+// -- Insert user information
+// INSERT INTO user
+// VALUES (:username, :email, :password);
+
+// -- Get the auto-incremented user ID
+// SET @newUserId = LAST_INSERT_ID();
+
+// INSERT INTO student
+// VALUES (@newUserId );
+
+// COMMIT;
+
+// ROLLBACK;
+
+// ''';
+
+//     await db.execute(
+//       sql,
+//       iterable: true,
+//       params: {
+//         'username': user.username,
+//         'email': user.email,
+//         'password': user.password,
+//       },
+//     );
+//   }
+
+  @override
+  Future<void> deleteUser(int id) {
+    // TODO: implement deleteUser
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<User> getUser(int id) {
+    // TODO: implement getUser
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<User> getUserByCredentials(String email, String password) {
+    // TODO: implement getUserByCredentials
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> updateUser(User user) {
+    // TODO: implement updateUser
+    throw UnimplementedError();
+  }
 
   @override
   Future<List<Student>> getStudentsBySection(int sectionId) async {
@@ -52,16 +112,12 @@ class StudentRepositoryImpl implements StudentRepository {
     const sql =
         'INSERT INTO student VALUES (:studentId, :nom, :prenom, :email, :password,:sectionId )';
 
-    /// here we try to catch execption errors of the sql statement
-    ///
-    /// ! we have to encrypt the password before creating the user
     try {
       await db.execute(
         sql,
         params: {
-          'studentId': student.studentId,
-          'nom': student.nom,
-          'prenom': student.prenom,
+          'studentId': student.userId,
+          'nom': student.username,
           'email': student.email,
           'password': student.password,
           'sectionId': student.sectionId,
